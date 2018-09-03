@@ -18,22 +18,25 @@ double CurrencyConversion(char choice, int gal, int sick, int knut) {
     return usrVal;
 }
 
+    void display() {
+        char choice, anyKey;
+        double usrGals, usrSicks, usrKnuts;
+        cout << "This program will convert HP currency into USD." << endl;
+        cout << "Do you prefer the Reddit or Wikia method? Please use r/w: " << endl;
+        cin >> choice;
+        cout << "How many Galleons do you have? " << endl;
+        cin >> usrGals;
+        cout << "How many Sickles do you have? " << endl;
+        cin >> usrSicks;
+        cout << "How many Knuts do you have? " << endl;
+        cin >> usrKnuts;
+        cout << "You have: " << "$" << CurrencyConversion(choice, usrGals, usrSicks, usrKnuts) << endl;
+        cout << "Please press any key to quit.";
+        cin >> anyKey;
+    }
+
 int main()
 {
-    char choice, anyKey;
-    double usrGals, usrSicks, usrKnuts;
-    cout << "This program will convert HP currency into USD." << endl;
-    cout << "Do you prefer the Reddit or Wikia method? Please use r/w: " << endl;
-    cin >> choice;
-    cout << "How many Galleons do you have? " << endl;
-    cin >> usrGals;
-    cout << "How many Sickles do you have? " << endl;
-    cin >> usrSicks;
-    cout << "How many Knuts do you have? " << endl;
-    cin >> usrKnuts;
-    cout << "You have: " << "$" << CurrencyConversion(choice, usrGals, usrSicks, usrKnuts) << endl;
-    cout << "Please press any key to quit.";
-    cin >> anyKey;
-
+    display();
     return 0;
 }
