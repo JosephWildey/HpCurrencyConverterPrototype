@@ -2,6 +2,7 @@
 
 using namespace std;
 
+/*perform conversion*/
 double CurrencyConversion(char choice, int gal, int sick, int knut) {
     double usrGal, usrSick, usrKnut, usrVal;
     if(choice == 'r') {
@@ -17,7 +18,7 @@ double CurrencyConversion(char choice, int gal, int sick, int knut) {
     }
     return usrVal;
 }
-
+    /*display conversion*/
     void display() {
         char choice, anyKey;
         double usrGals, usrSicks, usrKnuts;
