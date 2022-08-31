@@ -48,6 +48,7 @@ class HPWikiaConversion(HPCurrency):
                                                                            self.redditSick,
                                                                            self.redditKnut))
 
+# This method basically does all the heavy lifting
 def conversion():
     inputGal = 0.0
     inputSick = 0.0
