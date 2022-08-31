@@ -5,18 +5,54 @@ using namespace std;
 class HPCurrency {
     public:
 
-        int galCount = 0, sickCount = 0, knutCount = 0;
+        int getGals(void) {
+        
+            return galsCount;
+        }
+
+        void setGals(int g) {
+            
+            galsCount = g;
+        }
+
+        int getSick(void) {
+
+            return sickCount;
+        }
+
+        void setSick(int s) {
+         
+            sickCount = s;
+
+        }
+
+        int getKnut(void) {
+
+            return knutCount;
+        
+        }
+
+        void setKnut(int k) {
+
+            knutCount = k;
+
+        }
 
         float convert() {
             return (getGals() + getSick() + getKnut());
         }
+
+    protected:
+        int galsCount = 0;
+        int sickCount = 0;
+        int knutCount = 0;
 };
 
 class RedditHPCurrencyConversion : public HPCurrency {
-    public:
-        float convert() {
-            return (getGals() * 25) + (getSick() * 1.5) + (getKnut() * 0.05);
-        }
+     public:
+         float convert() {
+             return (getGals() * 25) + (getSick() * 1.5) + (getKnut() * 0.05);
+         }
 };
 
 class WikiaHPCurrencyConversion : public HPCurrency {
@@ -38,12 +74,6 @@ int main() {
     cout << "How many Bronze Knuts do you have?" << endl;
     cin >> usrKnuts;
 
-    HPCurrency HPMoney;
-
-    HPMoney.setGals(usrGals);
-    HPMoney.setSick(usrSicks);
-    HPMoney.setKnut(usrKnuts);
-
     RedditHPCurrencyConversion RedditMoney;
 
     RedditMoney.setGals(usrGals);
@@ -56,8 +86,7 @@ int main() {
     WikiaMoney.setSick(usrSicks);
     WikiaMoney.setKnut(usrKnuts);
 
-   cout << "Base money: " << HPMoney.convert() << "\n"
-        << "Reddit conversion: " << RedditMoney.convert() << "\n" <<
+   cout << "Reddit conversion: " << RedditMoney.convert() << "\n" <<
         "Wikia Conversion: " << WikiaMoney.convert()  << endl;
 
     return 0;
