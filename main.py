@@ -34,19 +34,19 @@ class HPRedditConversion(HPCurrency):
 # This is a child class that converts HP Currency into USD using a Wikia calculation
 class HPWikiaConversion(HPCurrency):
 
-    redditGal = 0
-    redditSick = 0
-    redditKnut = 0
+    wikiaGal = 0
+    wikiaSick = 0
+    wikiaKnut = 0
 
     def __init__(self, HPCurrency):
-        self.redditGal = HPCurrency.usrGal * 7.35
-        self.redditSick = HPCurrency.usrSick * 0.46
-        self.redditKnut = HPCurrency.usrKnut * 0.02
+        self.wikiaGal = HPCurrency.usrGal * 7.35
+        self.wikiaSick = HPCurrency.usrSick * 0.46
+        self.wikiaKnut = HPCurrency.usrKnut * 0.02
 
     def currency(self):
-        print("USD In Gals: {}\nUSD in Sicks: {}\nUSD in Knuts: {}".format(self.redditGal,
-                                                                           self.redditSick,
-                                                                           self.redditKnut))
+        print("USD In Gals: {}\nUSD in Sicks: {}\nUSD in Knuts: {}".format(self.wikiaGal,
+                                                                           self.wikiaSick,
+                                                                           self.wikiaKnut))
 
 # This method basically does all the heavy lifting
 def conversion():
